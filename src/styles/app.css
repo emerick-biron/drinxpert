@@ -1,6 +1,7 @@
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #F9E6CF;
 }

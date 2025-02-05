@@ -16,18 +16,18 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <ul>
-                <li><Link to="/quiz">Quiz</Link></li>
-                <li><Link to="/random">Random</Link></li>
+                <li><Link to="/quiz"><i className="fas fa-award"></i></Link></li>
+                <li><Link to="/random"><i className="fas fa-random"></i></Link></li>
             </ul>
 
             <form onSubmit={handleSearch} className="search-form">
                 <input
                     type="text"
-                    placeholder="Search cocktails..."
+                    placeholder="Search cocktail ..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
-                <button type="submit">Search</button>
+                <button type="submit"><i className="fas fa-search"></i></button>
             </form>
         </nav>
     );
