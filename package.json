@@ -55,8 +55,9 @@
     ],
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "optionalDependencies": {
+      "@rollup/rollup-linux-x64-musl": "^4.34.3"
     }
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-musl": "^4.34.3"
   }
 }
