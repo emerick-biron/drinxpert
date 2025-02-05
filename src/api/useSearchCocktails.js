@@ -48,7 +48,17 @@ const useSearchCocktails = (query) => {
           }
         }
 
-        const uniqueCocktails = Array.from(new Map(allCocktails.map((c) => [c.idDrink, c])).values());
+        // Reformater les cocktails pour ne garder que l'ID, le nom et l'image
+        const reformattedCocktails = allCocktails.map((cocktail) => ({
+          id: cocktail.idDrink,
+          name: cocktail.strDrink,
+          thumb: cocktail.strDrinkThumb,
+        }));
+
+        // Éliminer les doublons basés sur l'idDrink
+        const uniqueCocktails = Array.from(
+          new Map(reformattedCocktails.map((c) => [c.id, c])).values()
+        );
 
         setCocktails(uniqueCocktails);
       } catch (error) {

@@ -10,7 +10,10 @@ const Search = () => {
   const { cocktails, loading, error } = useSearchCocktails(query);
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Remonte en haut de la page à chaque nouvelle recherche
+    const searchContainer = document.getElementsByClassName("search-container")[0];
+    if (searchContainer) {
+      searchContainer.scrollTo(0, 0);
+    }
   }, [query]);
 
   return (
@@ -19,7 +22,7 @@ const Search = () => {
       {error && <p>{error}</p>}
         {cocktails && cocktails.length > 0 ? (
           cocktails.map((cocktail) => (
-            <CocktailCard key={cocktail.idDrink} cocktail={cocktail} />
+            <CocktailCard key={cocktail.id} cocktail={cocktail} />
           ))
         ) : (
           <p>No cocktails found.</p>
