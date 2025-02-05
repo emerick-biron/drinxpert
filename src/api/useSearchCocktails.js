@@ -23,6 +23,9 @@ const useSearchCocktails = (query) => {
           allCocktails = [...dataByName.drinks]; 
         }
 
+        if (query.length > 3) {
+          
+
         const responseIngredients = await fetch(
           'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
         );
@@ -47,6 +50,7 @@ const useSearchCocktails = (query) => {
             }
           }
         }
+      }
 
         // Reformater les cocktails pour ne garder que l'ID, le nom et l'image
         const reformattedCocktails = allCocktails.map((cocktail) => ({
@@ -62,7 +66,7 @@ const useSearchCocktails = (query) => {
 
         setCocktails(uniqueCocktails);
       } catch (error) {
-        setError('Erreur lors de la récupération des cocktails');
+        setError('Error during the search');
       } finally {
         setLoading(false);
       }

@@ -18,17 +18,20 @@ const Search = () => {
 
   return (
     <div className="search-container">
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-        {cocktails && cocktails.length > 0 ? (
-          cocktails.map((cocktail) => (
-            <CocktailCard key={cocktail.id} cocktail={cocktail} />
-          ))
-        ) : (
-          <p>No cocktails found.</p>
-        )}
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>{error}</p>
+      ) : cocktails && cocktails.length > 0 ? (
+        cocktails.map((cocktail) => (
+          <CocktailCard key={cocktail.id} cocktail={cocktail} />
+        ))
+      ) : (
+        <p>No cocktails found.</p>
+      )}
     </div>
   );
+  
 };
 
 export default Search;
