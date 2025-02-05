@@ -28,7 +28,7 @@ const Navbar = () => {
         <nav className="navbar">
             <ul>
                 <li><Link to="/quiz"><i className="fas fa-award"></i></Link></li>
-                <li><i onClick={handleRandom} className="fas fa-random"></i></li>
+                <li><i onClick={handleRandom} className="fas fa-random" data-testid="random-button"></i></li>
             </ul>
 
             <form onSubmit={handleSearch} className="search-form">
