@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { useGetRandomCocktail } from "../api/Quiz";
+import QuizCard from "../components/Quiz/QuizCard";
 
 
 
 const Quiz = () => {
-
-
     const [nextCocktail, setNextCocktail] = useState(0);
     const [cocktail, setCocktail] = useState(null);
 
@@ -13,7 +12,8 @@ const Quiz = () => {
 
     useEffect(() => {
         getRandomCocktail.then((cocktail) => {
-            console.log(nextCocktail);
+            console.log(cocktail.ingredients);
+            setCocktail(cocktail);
         });
     }, [nextCocktail]);
 
@@ -23,16 +23,9 @@ const Quiz = () => {
 
     return (
         <div>
-            {/* 
-                Trouver le bon ingrédient parmi plusieurs propositions en fonction du cocktail affiché
-                Trouver le bon cocktail parmi plusieurs propositions en fonction de l'ingrédient affiché           
-            */}
-            Start Quiz
-            soit il faut trouver le bon ingrédient ou le bon cocktail
-            C'est en 5 manches
-            On a le résuttat à la fin avec les bonnes réponses en mode controle caliap
+            <QuizCard {...cocktail} />
             <button onClick={handleGoToNextCocktail}>
-                Start
+                Next
             </button>
         </div>
     );

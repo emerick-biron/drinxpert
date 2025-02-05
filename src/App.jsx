@@ -6,8 +6,6 @@ import Random from './pages/Random';
 import './styles/app.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <Router>
       <Navbar />
