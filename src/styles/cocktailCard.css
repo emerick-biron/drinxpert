@@ -1,0 +1,30 @@
+.cocktail-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  width: 250px;
+  margin: 10px;
+  height: max-content;
+}
+
+.cocktail-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cocktail-card-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: -10px;
+}
+
+.cocktail-card-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
