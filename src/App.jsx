@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './pages/Navbar';
 import Search from './pages/Search';
 import Quiz from './pages/Quiz';
-import Random from './pages/Random';
 import Recipe from './pages/Recipe';
 import './styles/app.css';
 
